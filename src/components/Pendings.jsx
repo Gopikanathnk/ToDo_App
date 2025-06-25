@@ -1,6 +1,7 @@
 import "./Pendings.css";
+import { Check } from "lucide-react";
 
-const Pendings = ({ todos }) => {
+const Pendings = ({ todos, onComplete }) => {
   return (
     <div className="pendings">
       <h2>Pending ToDos</h2>
@@ -10,7 +11,13 @@ const Pendings = ({ todos }) => {
         todos.map((todo, index) => (
           <div key={index} className="pending-container">
             <p>{todo}</p>
-            <button className="complete-btn">Tick</button>
+            <button
+              className="complete-btn"
+              onClick={() => onComplete(index)}
+              title="Mark as completed"
+            >
+              <Check size={18} />
+            </button>
           </div>
         ))
       )}

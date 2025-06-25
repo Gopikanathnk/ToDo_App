@@ -8,7 +8,11 @@ const Completed = ({ todos }) => {
         {todos.length === 0 ? (
           <p>No todos</p>
         ) : (
-          todos.map((todo, index) => <p key={index}>{todo}</p>)
+          todos.map((todo, index) => (
+            <div key={index} className="completed-item">
+              <p>{todo}</p>
+            </div>
+          ))
         )}
       </div>
     </div>
